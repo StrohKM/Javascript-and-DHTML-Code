@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>BMI Calculation</title>
+    <link rel="stylesheet" href="bmi.css">
+</head>
+<body>
+	<main>
+		<h1>Body Mass Index Calculation Application</h1>
+		<!-- two input boxes for height and weight with labels -->
+        <label for="heightInput">Enter your height in inches:</label>
+		<input type='text' id='heightInput'><br>
+		<span id="height_error">&nbsp;</span><br>
+
+		<label for="weightInput">Enter your weight in pounds:</label>
+		<input type='text' id='weightInput'><br>
+		<span id="weight_error">&nbsp;</span><br>
+		
+		<!-- a calculate button with label -->
+		<label>&nbsp;</label>
+		<input type="button" id="calculate" value="Calculate BMI"> 
+		
+        <!-- a <div> element for displaying BMI or error message -->
+		<div id="bmiOutput"></div>
+	</main>
+	 <script> 
+	 	const $ = function (id) { return document.getElementById(id); };
+	    /* Add JS code in the following function to get user inputs, validate inputs, 
+		calculate BMI and display BMI or error message. Pay attention to the logical flow 
+		and a few details in the implementation as we discussed in class*/
+	    const processEntries = function() {	
+			let errorMessage = "";
+			let isValid = true;
+			$('bmiOutput').textContent = "";
+
+			//For loop not good choice since both inputs have totally different names
+			//Go off id's to get vals
+			let weight = $('weightInput').value;
+			weight = Number(weight.trim());
+
+			let height = $('heightInput').value;
+			height = Number(height.trim());
+
+			//validating inputs
+			if(isNaN(weight) || !Number.isInteger(weight) || weight <= 0)
+			{
+				isValid = false;
+				errorMessage += `weight is invalid!\n`;
+				console.log(`weight_error`);
+				// $(`weight_error`).textContent = "invalid input";
+				$(`weightInput`).className = "error";
+			}
+			else
+			{
+				$('weight_error').textContent = "";
+				$('weightInput').className = ""; 
+			}
+
+			if(isNaN(height) || !Number.isInteger(height) || height <= 0)
+			{
+				isValid = false;
+				errorMessage += `height is invalid!\n`;
+				console.log(`height_error`);
+				// $(`height_error`).textContent = "invalid input";
+				$(`heightInput`).className = "error";
+			}
+			else
+			{
+				$('height_error').textContent = "";
+				$('heightInput').className = "";
+			}
+
+			if(isValid)
+			{
+				let BMI = (703 * weight) / (height * height);
+				$('bmiOutput').textContent = 'BMI = ' + BMI.toFixed(1);
+
+				//Clears the errors so the boxes reset
+				$('height_error').textContent = "";
+				$('heightInput').className = "";
+
+				$('weight_error').textContent = "";
+				$('weightInput').className = ""; 
+			}
+			else
+			{
+				$('bmiOutput').style.whiteSpace = "pre";
+				$('bmiOutput').textContent = errorMessage;
+			}
+
+			
+		
+       }; 
+	   
+	   //handler button click event 
+		document.getElementById('calculate').onclick = processEntries;
+    </script>
+</body>
+</html>

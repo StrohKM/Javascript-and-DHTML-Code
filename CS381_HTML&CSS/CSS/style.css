@@ -1,0 +1,84 @@
+#outside {
+  z-index: 1;
+  position: absolute;
+  background-color: rgb(243, 185, 213); /*Chaning background color to pink*/
+  width: 500px; /*Chaned width to fit new pictures added*/
+  height: 500px;  /*Chaned height to fit new pictures added*/
+  text-align: center;
+  font-size: 2em; /*Changed font size*/
+  transition: 1s;
+  transform-origin: 0;
+  border-color: beige;
+  border-radius: 15px;
+}
+
+.open-card {
+  transform: rotateY(90deg);
+}
+
+#outside-title,
+#inside-title {
+  color: beige; /*Changed font color to beige*/
+  font-family: "Happy Monkey", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  margin: 1rem;
+}
+
+/* .happy-monkey-regular {
+  font-family: "Happy Monkey", system-ui;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+
+#outside-pic {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+
+#inside {
+  z-index: 0;
+  position: absolute;
+  background-color: rgb(243, 130, 138);   /* Changing background color to a redish color */
+  width: 500px; /*Chaned width to fit new pictures added*/
+  height: 500px; /*Chaned height to fit new pictures added*/
+  font-size: 2em; /*Changed font size*/
+  text-align: center;
+  border-radius: 15px;
+}
+
+#inside-pic {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+
+#message {
+  color: black;
+  font-family: Courier;
+  font-size: 12pt;
+  text-align: center;
+}
+
+button{
+  background: rgb(244, 241, 196); /*Changed button color to yellowish color*/
+   border-radius: 12px; /*Changing button to have rounded edges*/
+}
+
+a, form
+{
+  font-size: 50%;
+  font-family: "Happy Monkey", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#balloon-pic
+{
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Three ways to apply JavaScript to an HTML document</title>
+	<link rel="stylesheet" href="css/navigation.css">
+	<!-- 1st embedded js -->
+	<!-- <script>
+		function first() {
+			alert('From embedded JavaScript');
+
+		}
+		//https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+		window.onload = function () {
+			let elem1 = document.getElementById("ticket");
+			elem1.addEventListener("click", first);
+		} //to execute everything in that function after the entire page has finished loading to browser window
+
+	</script> -->
+</head>
+
+<body>
+	<h1>Navigation Bar 3</h1>
+	<nav id="nav_bar_3">
+		<ul>
+			<li><a href="#" style="color: purple">Home</a></li>
+			<li><a href="#" class='current' id="ticket">Get Tickets</a></li>
+			<li><a href="#" id="member" onclick="alert('From inline JavaScript!'); ">Become a Member</a></li>
+			<li><a href="#" id="about" style="color: green">About Us</a></li>
+		</ul>
+	</nav>
+	<!-- 2nd embedded js -->
+	<!-- <script>
+		function second() {
+			alert('From embedded JavaScript!');
+		}
+		let elem = document.getElementById("about");
+		elem.addEventListener("click", second);
+
+	</script> -->
+	<footer>
+		<!-- 3rd embedded js -->
+		<script>
+			let today = new Date();
+			document.write("<p>&copy;&nbsp;" + today.getFullYear() + ", cs381</p>");
+		</script>
+		<!-- <noscript> tags are used to display content when JavaScript is disabled in a user's browser -->
+		<noscript>&copy; 2021 </noscript>
+	</footer>
+	
+	<script src="js/practice2.js"></script>
+</body>
+
+</html>

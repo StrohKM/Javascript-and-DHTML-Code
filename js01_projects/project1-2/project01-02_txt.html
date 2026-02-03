@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 1
+      Hands-on Project 1-2
+
+      Author: Kayla Stroh
+      Date:   09/27/2025
+
+      Filename: project01-02.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 1-2</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src = "project01-02_txt.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         Hands-on Project 1-2
+      </h1>
+   </header>
+
+   <article>
+      <h2>High-Speed Internet Plans</h2>
+
+      <table>
+         <thead>
+            <tr>
+               <th>Service</th>
+               <th>Download Speed (Mbps)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- Service 1 -->
+            <tr>
+               <td>  
+                  <p id = "1name"></p>
+                  <script> 
+                     document.getElementById("1name").innerHTML = $service1Name;
+                  </script>
+               </td>
+               <td>
+                   <p id = "1speed"></p>
+                  <script>
+                      document.getElementById("1speed").innerHTML = $service1Speed;
+                  </script>
+               </td>
+            </tr>
+            <!-- Service 2 -->
+            <tr>
+               <td>
+                  <p id = "2name"></p>
+                  <script>
+                      document.getElementById("2name").innerHTML = $service2Name;
+                  </script>
+               </td>
+               <td>
+                  <p id = "2speed"></p>
+                  <script>
+                      document.getElementById("2speed").innerHTML = $service2Speed;
+                  </script>
+               </td>
+            </tr>
+            <!-- Service 3 -->
+            <tr>
+               <td>
+                  <p id = "3name"></p>
+                  <script>
+                      document.getElementById("3name").innerHTML = $service3Name;
+                  </script>
+               </td>
+               <td>
+                  <p id = "3speed"></p>
+                  <script>
+                      document.getElementById("3speed").innerHTML = $service3Speed;
+                  </script>
+               </td>
+            </tr>
+            <!-- Service 4 -->
+            <tr>
+               <td>
+                  <p id = "4name"></p>
+                  <script>
+                      document.getElementById("4name").innerHTML = $service4Name;
+                  </script>
+               </td>
+               <td>
+                  <p id = "4speed"></p>
+                  <script>
+                      document.getElementById("4speed").innerHTML = $service4Speed;
+                  </script>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </article>
+</body>
+</html>

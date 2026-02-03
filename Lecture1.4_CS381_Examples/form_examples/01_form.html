@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- <link rel="stylesheet" href="01_form.css"> -->
+    <style>
+        body {
+            margin: 30px;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 80%;
+            border: solid 1px grey;
+            padding: 10px;
+        }
+
+        #form1 input,
+        textarea,
+        #form1 button {
+            display: block;
+            margin: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        #form1 input {
+            width: 150px;
+        }
+
+        #form2 span {
+            display: inline-block;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form1" id="form1" action="https://wp.zybooks.com/form-viewer.php">
+        <!-- web browser applies default format for <fieldset> element -->
+        <h2>Form 1</h2>
+        <p>Examples of input boxes: </p>
+
+        <label for="email">E-Mail: </label><input type="text" name="email" id="email">
+        <label for="quantity">Quantity:</label> <input type="number" id="quantity" name="quantity" value="1" max="10"
+            min="0">
+        <label for="username">Username:</label><input type="text" id="username" name="username" autofocus>
+        <label for="password">Password:</label><input type="password" id="password" name="password"
+            placeholder="Enter your password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+            title="Password must be at least 6 characters long and contain at least one letter and one number">
+
+        <!-- Textarea is a form element that allows users to enter multi-line text input. -->
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" id="address" placeholder="Enter your mailing address"></textarea>
+
+        <p>Examples of buttons:</p>
+        <input type="button" name="message" id="message" value="Alert Me" onclick="alert('Hello there!');">
+        <input type="reset" name="resetform" id="resetform" value="Reset">
+        <input type="submit" name="submit" id="submit" value="Subscribe">
+
+    </form>
+
+    <form name="form2" id="form2" action="https://wp.zybooks.com/form-viewer.php" method='get'>
+        <h2>Form 2</h2>
+        <div>
+            <h3>Make your pizza choices:</h3>
+            Crust:
+            <label><input type="radio" name="crust" value="thin" id="thin" checked>Thin Crust</label>
+            <label><input type="radio" name="crust" value="deep" id="deep">Deep Dish</label>
+            <label><input type="radio" name="crust" value="hand" id="hand">Hand Tossed</label>
+            <br>Toppings:
+            <label><input type="checkbox" name="topping1" id="topping1" value="pepperoni">Pepperoni</label>
+            <label><input type="checkbox" name="topping2" id="topping2" value="mushrooms" checked>Mushrooms</label>
+            <label><input type="checkbox" name="topping3" id="topping3" value="olives">Olives</label>
+        </div>
+
+        <div>
+            Crust:
+            <select name="crust" id="crust">
+                <option value="thin">Thin Crust</option>
+                <option value="deep">Deep Dish</option>
+                <option value="hand">Hand Tossed</option>
+            </select>
+        </div>
+        <div>
+            <span>Styles:</span>
+            <select name="size" id="size">
+                <optgroup label="The New Yorker">
+                    <option value="ny10" selected>10"</option>
+                    <option value="ny12">12"</option>
+                    <option value="ny16">16"</option>
+                </optgroup>
+                <optgroup label="The Chicago">
+                    <option value="chi10">10"</option>
+                    <option value="chi12">12"</option>
+                    <option value="chi16">16"</option>
+                </optgroup>
+            </select>
+            <br>
+            <span>Toppings:</span><br>
+            <select name="toppings" id="toppings" multiple size="4">
+                <!-- size=4 shows 4 toppings in the list and a scroll-bar on the side-->
+                <option value="" disabled class="placeholder">Select one or more toppings...</option>
+                <option value="pepperoni">Pepperoni</option>
+                <option value="sausage">Sausage</option>
+                <option value="mushrooms">Mushrooms</option>
+                <option value="olives">Black olives</option>
+                <option value="onions">Onions</option>
+                <option value="bacon">Canadian bacon</option>
+                <option value="pineapple">Pineapple</option>
+            </select>
+            </br>
+            <!-- A button element with an image and text nested inside -->
+            <button type="submit" name="form2Submit" id="form2Submit"><img src="addtocart.png" width="30" height="23"
+                    alt="Add to Cart">Add to
+                Cart</button>
+    </form>
+
+</body>
+
+</html>
