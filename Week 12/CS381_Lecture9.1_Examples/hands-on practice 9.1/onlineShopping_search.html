@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <!-- Include bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <h5>Product List</h5>
+                <p>Filter products by category:
+                    <select onclick="displayProducts()" id="category">
+                            <option value="All">All</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="movies">Movies</option>
+                        <option value="video-games">Video Games</option>
+                    </select>
+                </p>
+                <table class='table table-bordered'>
+                    <thead style="font-weight: bold">
+                        <tr>
+                            <td>Product</td>
+                            <td>Category</td>
+                            <td>Cost</td>
+                            <td>Action </td>
+                        </tr>
+                    </thead>
+                    <tbody id='product-list'></tbody>
+                </table>
+
+            </div>
+            <div class="col-4">
+                <h4>Shopping Cart </h4>
+                <h5>Total cost: $<span id='cost'>0.00</span></h5>
+                <table class='table' style="width: 50%">
+                    <tbody id='cart'></tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src='onlineShopping_search.js'></script>
+</body>
+
+</html>
