@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>preventDefault example2</title>
+
+	<script>
+		function Init() {
+			var myTextbox = document.getElementById('my-textbox');
+			myTextbox.addEventListener('keypress', checkName, false);
+		}
+
+		function checkName(evt) {
+			var charCode = evt.charCode;
+			if (charCode != 0) {
+				if (charCode < 97 || charCode > 122) {
+					evt.preventDefault();
+					alert(
+						"Please use lowercase letters only."
+						+ "\n" + "charCode: " + charCode + "\n"
+					);
+				}
+			}
+		}
+
+		window.onload = Init;
+	</script>
+
+</head>
+<!--<body onload="Init()"> -->
+
+<body>
+	<p>Please enter your name using lowercase letters only.</p>
+	<form>
+		<input type="text" id="my-textbox" />
+	</form>
+	<p><button>Change color</button></p>
+	<script>
+		const btn = document.querySelector("button");
+
+		function random(number) {
+			return Math.floor(Math.random() * (number + 1));
+		}
+
+		btn.addEventListener("click", () => {
+			const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+			document.body.style.backgroundColor = rndCol;
+		});
+
+		//practice-part-1: define a function called changeColor() and use that function to replace the annoumous function as the event handler
+		// for button "click" event. 
+		// use a predefined function as event handler
+	
+		//practice-part-2: use the same function as event handler to change background color for input box 
+		//when each time that input box is clicked.
+		
+	</script>
+</body>
+
+</html>

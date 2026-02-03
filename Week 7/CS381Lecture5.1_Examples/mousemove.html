@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events - mousemove</title>
+  <style>
+    #circle {
+      width: 50px;
+      height: 50px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      transition: transform 0.1s ease;
+      /* smooth effect */
+    }
+
+    .trail {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: orange;
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.8;
+      transition: transform 0.2s linear;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="circle"></div>
+
+  <script>
+    const circle = document.getElementById('circle');
+
+    window.addEventListener('mousemove', function (e) {
+      circle.style.transform = `translate(${e.clientX - 25}px, ${e.clientY - 25}px)`;
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      const x = e.clientX / window.innerWidth * 255;
+      const y = e.clientY / window.innerHeight * 255;
+      document.body.style.backgroundColor = `rgb(${x}, 150, ${y})`;
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      const dot = document.createElement("div");
+      dot.className = "trail";
+      dot.style.left = e.pageX + "px";
+      dot.style.top = e.pageY + "px";
+      document.body.appendChild(dot);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 500);
+    });
+  </script>
+</body>
+
+</html>

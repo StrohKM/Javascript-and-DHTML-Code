@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<title> Demo_Use event object </title>
+	<style>
+		p {
+			padding: 0.5em;
+		}
+	</style>
+</head>
+
+<body onload="myFunction(event, 4)">
+
+	<!-- <body> -->
+	<p>Click the button to find out if the event is a cancelable event.</p>
+
+	<p><button onclick="myFunction(event,1)">Try it</button> </p>
+	<!-- <p><button>Try it</button></p> -->
+	<p><input type='submit' ondblclick="myFunction(event, 2)"></p>
+	<!-- <p><input type='submit'></p> -->
+	<p><input type="checkbox" id="my-checkbox" onclick="myFunction(event, 3)"></p>
+	<!-- <p><input type="checkbox" id="my-checkbox"></p> -->
+	<p id="demo4"></p>
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+
+	<script>
+		function myFunction(event, i) {
+
+			let x = event.cancelable;
+			let y = event.type;
+			let z = event.target;
+
+			document.getElementById("demo" + i).style = "white-space: pre";  //add this style setting so that \n will be recoganized as a line break 
+			document.getElementById("demo" + i).textContent += y + " event occurs on <" + z.nodeName.toLowerCase() + "> element ";
+			document.getElementById("demo" + i).textContent += "\nIs it cancalable?(T/F): " + x + "\n";
+		}
+
+		//use addEventListener() method to replace the inline event handler in HTML elements
+		//to register event handler
+
+	</script>
+
+</body>
+
+</html>
