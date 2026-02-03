@@ -1,0 +1,70 @@
+<!-- IF WNAT TO DO THUMBNAIL IMAGE -> GO TO CS381-lecture8_examples photo-viewer.html -->
+<!-- Thumbnail image has the big one with small ones the user can click on the change to the big image to that smaller image -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMe</title>
+    <link rel = "stylesheet" href = "css/styles.css">
+</head>
+
+<body>
+    <h1>Mini Me Page</h1>
+
+    <!-- Drop down for customization of window --> 
+    <select name = "customization" id = "customize">
+        <option value = "">Select a theme</option>
+        <option value = "floral">Floral</option>
+        <option value = "aquatic">Aquatic</option>
+        <option value = "random">Randomized</option>
+    </select>
+
+
+    <!-- Upload Image Button -->
+    <button id = "imageUploadBtn">Upload an image</button>
+    <!-- Accepts all image file type -->
+        <input type = "file" id = "imageUpload" accept = "image/*" multiple style = "display:none;">
+        <button id="addCommentBtn">Add Comment</button>
+        <div id="commentArea"></div>
+    <div id = "previewContainer">
+        <!-- Delete img button is in this div -->
+    </div>
+
+    
+    <!-- Floral images used for theme -->
+    <div id = "floralBanner">
+        <div id = "floralTextBox" contenteditable = "true">Add something about yourself here!</div>
+    </div>
+     <div id = "floralTheme">
+        <div class = "flowerFrame"></div>
+        <div class = "goldFrame"></div>
+    </div>
+
+    <!--Aquatic images used for theme  -->
+    <div id = "aquaticBanner">
+        <div id = "aquaticTextBox" contenteditable = "true">Add something about yourself here!</div>
+    </div>
+    <div id = "aquaticTheme">
+    </div>
+
+    <!-- Random selection of images for random theme -->
+    <div id = "randomBanner">
+        <div id = "randomTextBox" contenteditable = "true">Add something about yourself here!</div>
+    </div>
+    <div id = "randomTheme">
+    </div>
+     
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Jquery UI -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<!-- jQuery UI CSS for resizing the goldFram overlays -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<!-- Link to JavaScript code  -->
+<script src = "js/MiniMeJavaScript.js"></script>
+
+</body>
+</html>
